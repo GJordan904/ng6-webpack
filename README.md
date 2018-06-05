@@ -3,7 +3,7 @@ Custom Webpack, Angular Material, SSR using ngUniversal and Express. Great Start
 the repo and start building.
 
 ***Notice** The webpack config still needs some tweaking to get bundle size down and currently an issue with the server 
-bundle needs fixed. See issue 
+bundle needs fixed. See issues[#1](https://github.com/GJordan904/ng6-webpack/issues/1) and [#2](https://github.com/GJordan904/ng6-webpack/issues/2) 
 
 ## Basic scaffolding including:
 + A common module importing and exporting the Angular CommonModule and all Material Modules. It also registers and exports the Error and Layout Components.
