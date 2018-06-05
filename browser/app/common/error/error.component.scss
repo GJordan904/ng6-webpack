@@ -1,0 +1,54 @@
+@import '../../../scss/variables';
+@import "~bootstrap/scss/mixins/breakpoints";
+
+
+.error {
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('/assets/images/stars-header.jpg') top center;
+  background-size: cover;
+
+  .code, .message, .btn {
+    font-family: $font-family-monospace;
+  }
+  .code {
+    font-size: 10rem;
+    color: #336699;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 14rem;
+    }
+  }
+
+  .message {
+    font-size: 1.5rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.app-light {
+  .error {
+    .message {
+      color: map-get($lt-foreground-palette, base);
+    }
+  }
+}
+
+.app-dark {
+  .error {
+    .message {
+      color: map-get($dk-foreground-palette, base);
+    }
+  }
+}
+

@@ -1,0 +1,12 @@
+@include mat-core($cbj-typography);
+
+// App light
+.app-light {
+  @include angular-material-theme($lt-theme-colors);
+}
+
+// App dark
+.app-dark {
+  @include angular-material-theme($dk-theme-colors);
+}
+

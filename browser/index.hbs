@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{htmlWebpackPlugin.options.lang}}">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    {{#if htmlWebpackPlugin.options.mobile}}
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    {{/if}}
+    {{#each htmlWebpackPlugin.options.meta as |meta|}}
+    <meta {{#each meta as |metaVal metaKey|}}{{metaKey}}="{{metaVal}}" {{/each}}>
+    {{/each}}
+    <title>{{htmlWebpackPlugin.options.title}}</title>
+    <base href="{{htmlWebpackPlugin.options.baseHref}}">
+    {{#if htmlWebpackPlugin.files.favicon}}
+    <link href="{{htmlWebpackPlugin.files.favicon}}" rel="shortcut icon" />
+    {{/if}}
+    {{#each htmlWebpackPlugin.options.links}}
+    <link href="{{{this}}}" rel="stylesheet">
+    {{/each}}
+    {{#each htmlWebpackPlugin.files.css as |href|}}
+    <link href="{{href}}" rel="stylesheet" />
+    {{/each}}
+    {{#if htmlWebpackPlugin.options.headHtmlSnippet}}
+      {{{htmlWebpackPlugin.options.headHtmlSnippet}}}
+    {{/if}}
+  </head>
+
+  <body class="{{htmlWebpackPlugin.options.bodyClass}}">
+  {{#if htmlWebpackPlugin.options.unsupportedBrowser}}
+  <style>.unsupported-browser { display: none; }</style>
+  <div class="unsupported-browser">
+    Sorry, your browser is not supported. Please upgrade to the latest version or switch your browser to use this
+    site. See <a href="http://outdatedbrowser.com/">outdatedbrowser.com</a> for options.
+  </div>
+  {{/if}}
+
+  {{#if htmlWebpackPlugin.options.bodyHtmlSnippet}}
+  {{{htmlWebpackPlugin.options.bodyHtmlSnippet}}}
+  {{/if}}
+
+  {{#if htmlWebpackPlugin.options.window}}
+  <script type="text/javascript">
+    {{#each htmlWebpackPlugin.options.window}}
+      window['{{@key}}'] = JSON.stringify({{this}});
+    {{/each}}
+  </script>
+  {{/if}}
+  {{#each htmlWebpackPlugin.options.scripts}}
+  <script src="{{this}}" type="text/javascript"></script>
+  {{/each}}
+  {{#each htmlWebpackPlugin.files.chunks}}
+  <script src="{{this.entry}}" type="text/javascript"></script>
+  {{/each}}
+  {{#if htmlWebpackPlugin.options.devServer}}
+  <script src="{{htmlWebpackPlugin.options.devServer}}/webpack-dev-server.js" type="text/javascript"></script>
+  {{/if}}
+  {{#if htmlWebpackPlugin.options.googleAnalytics}}
+  <script type="text/javascript">
+    window.GoogleAnalyticsObject='ga';window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','{{htmlWebpackPlugin.options.googleAnalytics.trackingId}}','auto');
+    {{#if htmlWebpackPlugin.options.googleAnalytics.pageViewOnLoad}}
+      ga('send','pageview')
+    {{/if}}
+  </script>
+  <script async defer src="https://www.google-analytics.com/analytics.js" type="text/javascript"></script>
+  {{/if}}
+  </body>
+</html>

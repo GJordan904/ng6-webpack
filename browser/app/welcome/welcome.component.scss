@@ -1,0 +1,18 @@
+@import '../../scss/variables';
+
+.wrapper {
+  min-height: 100vh;
+  padding: 48px 24px;
+}
+
+.headline {
+  text-align: center;
+}
+
+.mat-h1, .mat-h2, .mat-h3, .mat-h4 {
+  color: $primary
+}
+
+.lead {
+  color: lighten($primary, 15%);
+}

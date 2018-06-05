@@ -1,0 +1,13 @@
+@mixin section($bg, $bg-size, $w: 100%, $p: 2rem 1rem) {
+  width: $w;
+  padding: $p;
+  background: $bg;
+  background-size: $bg-size;
+  position: relative;
+  overflow: hidden;
+
+  .centered-header {
+    display: flex;
+    justify-content: center;
+  }
+}

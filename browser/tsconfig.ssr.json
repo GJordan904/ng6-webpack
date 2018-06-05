@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "../out-tsc/browser",
+    "baseUrl": "./",
+    "module": "commonjs",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "server/test.ts",
+    "**/*.spec.ts"
+  ],
+  "angularCompilerOptions": {
+    "entryModule": "./app/app-ssr.module#AppSsrModule"
+  }
+}

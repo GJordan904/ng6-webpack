@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/tsc",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "target": "es2017",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "build/typings"
+    ]
+  },
+  "exclude": [
+    "server/test.ts",
+    "**/*.spec.ts"
+  ]
+}
+

@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="headline">
+    <h1 class="mat-h1">Angular 6 Starter</h1>
+    <h2 class="mat-subheader">
+      Custom Webpack, Angular Material, SSR using ngUniversal and Express.
+      Great Starting point for your next project. Clone the repo and start building.
+    </h2>
+  </div>
+
+  <h3 class="mat-h3 pt-4">Basic scaffolding including:</h3>
+  <ul>
+    <li>
+      A common module importing and exporting the Angular CommonModule and all Material Modules. It also registers
+      and exports the Error and Layout Components.
+    </li>
+    <li>Some common Angular animations that are located in the common module.</li>
+    <li>A media query service that registers multiple breakpoint Observers and provides them as a single Observable</li>
+    <li>A base class for Components to extend that contains code shared among many or all component classes</li>
+    <li>Basic app module, app-routing module, and app-ssr module</li>
+  </ul>
+
+  <h3 class="mat-h3 pt-4">Custom Webpack</h3>
+  <p>
+    The webpack config is written in Typescript and some convenience npm scripts are provided. Some of the Typescript comes
+    directly from the Angular project.
+    <span class="mat-accent">
+      The build system still needs some tweaks to the optimizations to get bundle size down and more inline with the CLI built bundle size.
+    </span>
+  </p>
+
+  <h4 class="mat-h4 pt-4">NPM Commands</h4>
+  <ul>
+    <li><span class="lead">build</span>: builds a development web bundle</li>
+    <li><span class="lead">dev</span>: starts webpack-dev-server serving web bundle</li>
+    <li><span class="lead">dev:server</span>: starts webpack in watch mode building the server code</li>
+    <li><span class="lead">build:prod</span>: builds a production, AOT compiled web bundle</li>
+    <li><span class="lead">build:ssr</span>: builds an SSR bundle</li>
+    <li><span class="lead">build:server</span>: build the server bundle</li>
+    <li><span class="lead">build:all</span>: build it all</li>
+    <li><span class="lead">deploy</span>: build everything with the deploy flag set. You must add the url in the package.json, see scripts.deploy</li>
+    <li><span class="lead">start</span>: servers the fully built app from the dist/server dir</li>
+  </ul>
+</div>
